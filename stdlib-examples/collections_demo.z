@@ -1,0 +1,95 @@
+// Z-Lang Standard Library Demo: Collections Functions
+
+fn array_sum(a: i64, b: i64, c: i64) -> i64 {
+    return a + b + c;
+}
+
+fn array_max(a: i64, b: i64, c: i64) -> i64 {
+    let max_val: i64 = a;
+
+    if b > max_val {
+        max_val = b;
+    }
+
+    if c > max_val {
+        max_val = c;
+    }
+
+    return max_val;
+}
+
+fn array_min(a: i64, b: i64, c: i64) -> i64 {
+    let min_val: i64 = a;
+
+    if b < min_val {
+        min_val = b;
+    }
+
+    if c < min_val {
+        min_val = c;
+    }
+
+    return min_val;
+}
+
+fn array_avg(a: i64, b: i64, c: i64) -> i64 {
+    return (a + b + c) / 3;
+}
+
+fn array_filter_even(a: i64, b: i64, c: i64) -> i64 {
+    let count: i64 = 0;
+
+    if (a % 2) == 0 {
+        count = count + 1;
+    }
+
+    if (b % 2) == 0 {
+        count = count + 1;
+    }
+
+    if (c % 2) == 0 {
+        count = count + 1;
+    }
+
+    return count;
+}
+
+fn array_map_double(a: i64, b: i64, c: i64) -> i64 {
+    return (a * 2) + (b * 2) + (c * 2);
+}
+
+fn main() {
+    println(49);  // Separator
+
+    // Test array_sum
+    println(83);  // "S" for "Sum"
+    println(array_sum(10, 20, 30));  // Should print 60
+    println(array_sum(5, 5, 5));     // Should print 15
+
+    // Test array_max
+    println(77);  // "M" for "Max"
+    println(array_max(10, 50, 30));  // Should print 50
+    println(array_max(100, 200, 150)); // Should print 200
+
+    // Test array_min
+    println(78);  // "N" for "Min"
+    println(array_min(10, 50, 30));  // Should print 10
+    println(array_min(100, 200, 150)); // Should print 100
+
+    // Test array_avg
+    println(65);  // "A" for "Average"
+    println(array_avg(10, 20, 30));  // Should print 20
+    println(array_avg(100, 200, 300)); // Should print 200
+
+    // Test array_filter_even
+    println(69);  // "E" for "Even filter"
+    println(array_filter_even(10, 15, 20));  // Should print 2
+    println(array_filter_even(1, 3, 5));     // Should print 0
+
+    // Test array_map_double
+    println(68);  // "D" for "Double"
+    println(array_map_double(1, 2, 3));  // Should print 12 (2+4+6)
+    println(array_map_double(10, 20, 30)); // Should print 120 (20+40+60)
+
+    return;
+}

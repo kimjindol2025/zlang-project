@@ -1,0 +1,8 @@
+// 주석 테스트
+fn test_lexer() -> i64 {
+    let x: i32 = 42;
+    let y: f64 = 3.14;
+    let s: string = "hello";
+    let b: bool = true;
+    return 100;
+}

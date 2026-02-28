@@ -1,0 +1,121 @@
+// Z-Lang Standard Library Test Suite: Math Functions
+
+fn abs(x: i64) -> i64 {
+    if x < 0 {
+        return -x;
+    }
+    return x;
+}
+
+fn pow(x: i64, n: i64) -> i64 {
+    let result: i64 = 1;
+    let i: i64 = 0;
+
+    while i < n {
+        result = result * x;
+        i = i + 1;
+    }
+
+    return result;
+}
+
+fn max(a: i64, b: i64) -> i64 {
+    if a > b {
+        return a;
+    }
+    return b;
+}
+
+fn is_even(n: i64) -> bool {
+    return (n % 2) == 0;
+}
+
+fn gcd(a: i64, b: i64) -> i64 {
+    let x: i64 = a;
+    let y: i64 = b;
+
+    while y != 0 {
+        let temp: i64 = y;
+        y = x % y;
+        x = temp;
+    }
+
+    return x;
+}
+
+// Test runner
+fn main() {
+    let test_count: i64 = 0;
+    let pass_count: i64 = 0;
+
+    // Test 1: abs(-42) == 42
+    test_count = test_count + 1;
+    if abs(-42) == 42 {
+        pass_count = pass_count + 1;
+        println(49);  // PASS indicator
+    }
+
+    // Test 2: abs(42) == 42
+    test_count = test_count + 1;
+    if abs(42) == 42 {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 3: pow(2, 8) == 256
+    test_count = test_count + 1;
+    if pow(2, 8) == 256 {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 4: pow(3, 3) == 27
+    test_count = test_count + 1;
+    if pow(3, 3) == 27 {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 5: max(100, 50) == 100
+    test_count = test_count + 1;
+    if max(100, 50) == 100 {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 6: is_even(10) == true
+    test_count = test_count + 1;
+    if is_even(10) == true {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 7: is_even(7) == false
+    test_count = test_count + 1;
+    if is_even(7) == false {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 8: gcd(48, 18) == 6
+    test_count = test_count + 1;
+    if gcd(48, 18) == 6 {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Test 9: gcd(100, 50) == 50
+    test_count = test_count + 1;
+    if gcd(100, 50) == 50 {
+        pass_count = pass_count + 1;
+        println(49);
+    }
+
+    // Print summary
+    println(84);  // "T" for Total
+    println(test_count);  // Number of tests
+    println(80);  // "P" for Passed
+    println(pass_count);  // Number passed
+
+    return;
+}

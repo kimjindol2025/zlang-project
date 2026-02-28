@@ -1,0 +1,117 @@
+// Z-Lang Standard Library: Collections
+// Array and collection utilities
+
+// Simple array operations (using indices)
+
+// Sum array elements (assumes 0-indexed array passed as individual values)
+fn array_sum(a: i64, b: i64, c: i64) -> i64 {
+    return a + b + c;
+}
+
+// Find maximum in array
+fn array_max(a: i64, b: i64, c: i64) -> i64 {
+    let max_val: i64 = a;
+
+    if b > max_val {
+        max_val = b;
+    }
+
+    if c > max_val {
+        max_val = c;
+    }
+
+    return max_val;
+}
+
+// Find minimum in array
+fn array_min(a: i64, b: i64, c: i64) -> i64 {
+    let min_val: i64 = a;
+
+    if b < min_val {
+        min_val = b;
+    }
+
+    if c < min_val {
+        min_val = c;
+    }
+
+    return min_val;
+}
+
+// Count occurrences of value in array
+fn array_count(target: i64, a: i64, b: i64, c: i64) -> i64 {
+    let count: i64 = 0;
+
+    if a == target {
+        count = count + 1;
+    }
+
+    if b == target {
+        count = count + 1;
+    }
+
+    if c == target {
+        count = count + 1;
+    }
+
+    return count;
+}
+
+// Average of array elements
+fn array_avg(a: i64, b: i64, c: i64) -> i64 {
+    return (a + b + c) / 3;
+}
+
+// Check if value exists in array
+fn array_contains(target: i64, a: i64, b: i64, c: i64) -> bool {
+    if a == target {
+        return true;
+    }
+
+    if b == target {
+        return true;
+    }
+
+    if c == target {
+        return true;
+    }
+
+    return false;
+}
+
+// Swap two elements (returns larger first)
+fn array_swap(a: i64, b: i64) -> i64 {
+    if a > b {
+        return a;
+    }
+    return b;
+}
+
+// Filter: return only even numbers from array
+fn array_filter_even(a: i64, b: i64, c: i64) -> i64 {
+    let count: i64 = 0;
+
+    if (a % 2) == 0 {
+        count = count + 1;
+    }
+
+    if (b % 2) == 0 {
+        count = count + 1;
+    }
+
+    if (c % 2) == 0 {
+        count = count + 1;
+    }
+
+    return count;
+}
+
+// Map: double each element (returns sum of doubled values)
+fn array_map_double(a: i64, b: i64, c: i64) -> i64 {
+    return (a * 2) + (b * 2) + (c * 2);
+}
+
+// Reduce: sum all elements (fold operation)
+fn array_reduce_sum(a: i64, b: i64, c: i64, d: i64) -> i64 {
+    return a + b + c + d;
+}

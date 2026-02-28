@@ -1,0 +1,12 @@
+fn safe_divide(a: i64, b: i64) -> i64 {
+    try {
+        if b == 0 {
+            return -1;
+        }
+        return a / b;
+    } catch (e: DivisionError) {
+        return -1;
+    } finally {
+        return 0;
+    }
+}

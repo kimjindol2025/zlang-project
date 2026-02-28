@@ -1,0 +1,94 @@
+// Z-Lang Standard Library: I/O Functions
+// Input/Output utilities
+
+// Print integer with label
+fn print_int(label: i64, value: i64) {
+    println(label);
+    println(value);
+}
+
+// Print multiple integers
+fn print_ints(a: i64, b: i64, c: i64) {
+    println(a);
+    println(b);
+    println(c);
+}
+
+// Print calculation result
+fn print_result(a: i64, b: i64, op: i64, result: i64) {
+    println(a);
+    println(op);
+    println(b);
+    println(result);
+}
+
+// Horizontal line separator
+fn print_separator() {
+    println(45);  // Print dash character code or number
+}
+
+// Print binary representation (simplified)
+fn print_binary(n: i64) -> i64 {
+    if n == 0 {
+        println(0);
+        return 0;
+    }
+
+    let bits: i64 = 0;
+    let temp: i64 = n;
+
+    while temp > 0 {
+        bits = temp % 2;
+        temp = temp / 2;
+    }
+
+    return bits;
+}
+
+// Count digits in number
+fn digit_count(n: i64) -> i64 {
+    if n == 0 {
+        return 1;
+    }
+
+    let count: i64 = 0;
+    let temp: i64 = n;
+
+    while temp > 0 {
+        count = count + 1;
+        temp = temp / 10;
+    }
+
+    return count;
+}
+
+// Sum digits of a number
+fn sum_digits(n: i64) -> i64 {
+    let sum: i64 = 0;
+    let temp: i64 = n;
+
+    while temp > 0 {
+        sum = sum + (temp % 10);
+        temp = temp / 10;
+    }
+
+    return sum;
+}
+
+// Reverse a number
+fn reverse_number(n: i64) -> i64 {
+    let result: i64 = 0;
+    let temp: i64 = n;
+
+    while temp > 0 {
+        result = result * 10 + (temp % 10);
+        temp = temp / 10;
+    }
+
+    return result;
+}
+
+// Check if number is palindrome
+fn is_palindrome(n: i64) -> bool {
+    return n == reverse_number(n);
+}

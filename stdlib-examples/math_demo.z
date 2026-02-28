@@ -1,0 +1,83 @@
+// Z-Lang Standard Library Demo: Math Functions
+
+// Include math functions (simulated with direct implementation)
+// In a real scenario, these would be imported
+
+// Math library functions
+fn abs(x: i64) -> i64 {
+    if x < 0 {
+        return -x;
+    }
+    return x;
+}
+
+fn pow(x: i64, n: i64) -> i64 {
+    let result: i64 = 1;
+    let i: i64 = 0;
+
+    while i < n {
+        result = result * x;
+        i = i + 1;
+    }
+
+    return result;
+}
+
+fn max(a: i64, b: i64) -> i64 {
+    if a > b {
+        return a;
+    }
+    return b;
+}
+
+fn factorial(n: i64) -> i64 {
+    if n <= 1 {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+fn gcd(a: i64, b: i64) -> i64 {
+    let x: i64 = a;
+    let y: i64 = b;
+
+    while y != 0 {
+        let temp: i64 = y;
+        y = x % y;
+        x = temp;
+    }
+
+    return x;
+}
+
+// Main demonstration
+fn main() {
+    println(49);  // Print newline/separator
+
+    // Test abs function
+    println(65);  // "A" for "Absolute Value"
+    println(abs(-42));  // Should print 42
+    println(abs(42));   // Should print 42
+
+    // Test pow function
+    println(66);  // "B" for "Power"
+    println(pow(2, 8));  // Should print 256
+    println(pow(3, 3));  // Should print 27
+
+    // Test max function
+    println(67);  // "C" for "Compare (max)"
+    println(max(100, 50));  // Should print 100
+    println(max(25, 75));   // Should print 75
+
+    // Test factorial
+    println(68);  // "D" for "Factorial"
+    println(factorial(5));  // Should print 120
+    println(factorial(6));  // Should print 720
+
+    // Test GCD
+    println(69);  // "E" for "GCD"
+    println(gcd(48, 18));  // Should print 6
+    println(gcd(100, 50)); // Should print 50
+
+    return;
+}
