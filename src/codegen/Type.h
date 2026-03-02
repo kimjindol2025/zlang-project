@@ -6,6 +6,13 @@
 
 namespace zlang {
 
+// Forward declarations
+struct Lifetime {
+    std::string name;
+};
+
+class TypeVariable;  // Forward declaration
+
 // Z-Lang의 모든 타입을 표현하는 열거형
 enum class BuiltinType {
     I32,        // 32비트 정수
@@ -24,6 +31,9 @@ enum class BuiltinType {
 // Z-Lang 타입 정보 (포인터, 배열 등 수정자 포함)
 struct Type {
     BuiltinType base = BuiltinType::Unknown;
+
+    // 타입 변수 (TypeVariable)
+    bool is_type_var = false;
 
     // 포인터 타입: &T
     bool is_pointer = false;
