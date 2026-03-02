@@ -1,6 +1,7 @@
 #ifndef GENERIC_TYPE_H
 #define GENERIC_TYPE_H
 
+#include "Type.h"
 #include <string>
 #include <vector>
 #include <map>
